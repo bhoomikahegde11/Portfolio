@@ -1,0 +1,275 @@
+/*********************
+GLOBAL RESET
+*********************/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+body {
+	font-family: 'Segoe UI', system-ui, sans-serif;
+	background: #0f1115;
+	color: #e6e6e6;
+	line-height: 1.6;
+}
+
+/*********************
+COLOR THEME (Gaming Style)
+*********************/
+/*
+Primary background: #0f1115
+Secondary background: #151922
+Card background: #1c2230
+Accent: #00f5d4
+Accent soft: #4cc9f0
+Text main: #e6e6e6
+Text muted: #a0a0a0
+Glow: rgba(0,245,212,0.25)
+*/
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+h1, h2, h3, h4 {
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	color: #ffffff;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+}
+
+h3 {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
+}
+
+h4 {
+	font-size: 1rem;
+	color: #00f5d4;
+	margin-bottom: 0.5rem;
+}
+
+p {
+	color: #d0d0d0;
+	margin-bottom: 1rem;
+}
+
+a {
+	color: #00f5d4;
+	transition: 0.3s;
+}
+
+a:hover {
+	color: #4cc9f0;
+}
+
+/*********************
+LAYOUT
+*********************/
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+.primary {
+	background: #0f1115;
+}
+
+.secondary {
+	background: #151922;
+}
+
+/*********************
+HEADER
+*********************/
+
+header {
+	padding: 30px 0;
+	border-bottom: 1px solid #1f2635;
+}
+
+header .wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.logo-container h1 span {
+	font-size: 0.9rem;
+	color: #00f5d4;
+	font-weight: 400;
+}
+
+/*********************
+NAVIGATION
+*********************/
+
+#mainnav ul {
+	display: flex;
+	gap: 25px;
+}
+
+#mainnav a {
+	font-size: 1rem;
+	color: #e6e6e6;
+	position: relative;
+	padding-bottom: 5px;
+}
+
+#mainnav a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0%;
+	height: 2px;
+	background: #00f5d4;
+	transition: 0.3s;
+}
+
+#mainnav a:hover::after {
+	width: 100%;
+}
+
+/*********************
+WORK SECTION
+*********************/
+
+#work {
+	padding: 80px 0;
+	background: #0f1115;
+}
+
+.featured {
+	background: #1c2230;
+	border: 1px solid #222a3a;
+	border-radius: 12px;
+	padding: 30px;
+	margin-bottom: 50px;
+	box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
+.projects {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 25px;
+}
+
+.projects article {
+	background: #1c2230;
+	border: 1px solid #222a3a;
+	border-radius: 12px;
+	padding: 25px;
+	transition: 0.3s;
+	position: relative;
+	overflow: hidden;
+}
+
+.projects article::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(120deg, transparent, rgba(0,245,212,0.08), transparent);
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.projects article:hover::before {
+	opacity: 1;
+}
+
+.projects article:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 10px 40px rgba(0,245,212,0.15);
+	border-color: #00f5d4;
+}
+
+/*********************
+ABOUT + CONTACT
+*********************/
+
+#about-contact {
+	padding: 80px 0;
+}
+
+#about-contact .wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 50px;
+}
+
+#about-contact article {
+	background: #1c2230;
+	border: 1px solid #222a3a;
+	border-radius: 12px;
+	padding: 30px;
+}
+
+/*********************
+SOCIAL ICONS
+*********************/
+
+.social a {
+	font-size: 1.5rem;
+	margin-right: 15px;
+	color: #e6e6e6;
+	transition: 0.3s;
+}
+
+.social a:hover {
+	color: #00f5d4;
+	text-shadow: 0 0 10px rgba(0,245,212,0.6);
+}
+
+/*********************
+FOOTER
+*********************/
+
+footer {
+	background: #0f1115;
+	border-top: 1px solid #1f2635;
+	padding: 30px 0;
+	margin-top: 80px;
+}
+
+.centered {
+	text-align: center;
+	color: #888;
+	font-size: 0.9rem;
+}
+
+/*********************
+RESPONSIVE
+*********************/
+
+@media (max-width: 900px) {
+	#about-contact .wrapper {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 600px) {
+	h1 { font-size: 2rem; }
+	h2 { font-size: 1.6rem; }
+	header .wrapper {
+		flex-direction: column;
+		gap: 20px;
+	}
+}
